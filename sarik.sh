@@ -27,8 +27,8 @@
 #Agradecimentos:
 #
 #
-#   Dr. Vinícius Pereira Gonçalves - Orientador do projeto
-#   Dr. Geraldo Pereira Rocha Filho- Co-Orientador do projeto
+#   Dr. Vinícius Pereira Gonçalves  - Orientador do projeto
+#   Dr. Geraldo Pereira Rocha Filho - Co-Orientador do projeto
 #
 #
 #--------------------------------------------------------------------------------------#
