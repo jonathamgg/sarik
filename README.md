@@ -9,4 +9,4 @@ Agradecimentos:
 
 Dr. Vinícius Pereira Gonçalves - Orientador do projeto
 
-Dr. Geraldo Pereira- Co-orientador do projeto
+Dr. Geraldo Pereira Rocha Filho - Co-Orientador do projeto
