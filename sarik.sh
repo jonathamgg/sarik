@@ -39,6 +39,8 @@ NODES=`kubectl get node | awk '{print $1}' | grep -v ^N` #store nodes
 #for i in "${NODES[@]}";do echo "NODE : $i";done
 POD=`kubectl get pod | awk '{print $1}' | grep -v ^N` #store pod
 #for i in "${POD[@]}";do echo "POD : $i";done
+LISTNAMES=`kubectl get namespace | awk '{print $1}' | grep -v ^'default' | grep -v ^N | grep -v ^kube`
+for i in "${LISTNAMES[@]}";do echo "$i";done
 #
 #--------------------------------------------------------------------------------------#
 
