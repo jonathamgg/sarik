@@ -1,15 +1,4 @@
-  
-  
-  
-  
-  _____         _____  _____ _  __
-  / ____|  /\   |  __ \|_   _| |/ /
- | (___   /  \  | |__) | | | | ' / 
-  \___ \ / /\ \ |  _  /  | | |  <  
-  ____) / ____ \| | \ \ _| |_| . \ 
- |_____/_/    \_\_|  \_\_____|_|\_\
-
-SARIK - SEGURANÇA AUTOMÁTICA DE REGRAS EM IPTABLES EM KUBERNETES
+#SARIK - SEGURANÇA AUTOMÁTICA DE REGRAS EM IPTABLES EM KUBERNETES
 
 SITE:          https://sarik.org
 
