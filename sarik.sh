@@ -158,6 +158,19 @@ do
       echo "$VALUE_NAMESPACE"
       echo "${POD_NAMESPACE[$CONT3]}"
       progress-bar2 $CONT2
+
+    case $VERSION_OS in
+    #O.S Alpine
+    Alpine)
+    #test touch in the POD
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- touch teste.txt
+    ;;
+    #O.S Debian
+    Debian)
+    #test touch in the POD
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- touch teste.txt
+    ;;
+    esac
     ((CONT=CONT-1))
     ((CONT3=CONT3+1))
 done
