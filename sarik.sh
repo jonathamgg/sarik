@@ -33,7 +33,7 @@
 #
 #
 #--------------------------------------------------------------------------------------#
-
+sleep 2
 echo " "
 cat << "EOF"
    _____              _____    _____   _  __
@@ -51,7 +51,14 @@ echo "==========================================================================
 echo " "
 echo " "
 
-
+echo "Agradecimentos aos professores:"
+sleep 1
+echo "Dr. Vinícius Pereira Gonçalves  - Orientador do projeto"
+sleep 2
+echo "Dr. Geraldo Pereira Rocha Filho - Co-Orientador do projeto"
+sleep 2
+echo " "
+echo " "
 #---------------------------------VARIÁVEIS--------------------------------------------#
 #
 NODES=`kubectl get node | awk '{print $1}' | grep -v ^NAME` #store nodes
@@ -150,9 +157,12 @@ printf "\n"
 
 #---------------------------------EXECUÇÃO---------------------------------------------#
 #
-until [ $CONT -le 0 ]
+sleep 5
+until [ $CONT -le 1 ]
 do
-      echo "Faltam $CONT replicas para configurar firewall."
+      CONTLINHAS=$CONT
+      ((CONTLINHAS=CONTLINHAS-1))
+      echo "Faltam $CONTLINHAS replicas para configurar firewall."
       VERSION_OS=`kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- grep ^NAME=.*$ /etc/os-release | awk '{print $1}' | sed s/NAME="."//`
       echo "$VERSION_OS" #Version the of sistym operation
       echo "$VALUE_NAMESPACE" #Version the of namespace
@@ -167,12 +177,12 @@ do
     kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apk add iptables
 
     CONT_LINE=`cat RuleSO/alpine.cf | wc -l`
-    readarray OS_Alpine < RuleSO/alpine.cf
-
-    	while [ $CONT_LINE -ne 0 ];do
-	echo ${OS_Alpine[${CONT_LINE}]}
-	kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- echo "${OS_Alpine[${CONT_LINE}]}" >> teste.txt
-	((CONT_LINE=CONT_LINE-1))
+    readarray OS < RuleSO/alpine.cf
+    i=0
+    	while [ $i -le $CONT_LINE ];do
+	echo ${OS[${i}]}
+	kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- echo "${OS[${i}]}" >> teste.txt
+	((i=i+1))
 	done
     ;;
     #O.S Debian
@@ -181,13 +191,13 @@ do
     kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- touch teste.txt
     kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apt update && apt install iptables -y
     CONT_LINE=`cat RuleSO/debian.cf | wc -l`
-    readarray OS_Debian < RuleSO/debian.cf
-
-        while [ $CONT_LINE -ne 0 ];do
-        echo ${OS_Debian[${CONT_LINE}]}
-	kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- echo "${OS_Debian[${CONT_LINE}]}" >> teste.txt
-        ((CONT_LINE=CONT_LINE-1))
-        done
+    readarray OS < RuleSO/debian.cf
+    i=0
+        while [ $i -le $CONT_LINE ];do
+        echo ${OS[${i}]}
+        kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- echo "${OS[${i}]}" >> teste.txt
+        ((i=i+1))
+	done
     ;;
     #O.S Ubuntu
     Ubuntu)
@@ -195,12 +205,13 @@ do
     kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- touch teste.txt
     kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apt update && apt install iptables -y
     CONT_LINE=`cat RuleSO/ubuntu.cf | wc -l`
-    readarray OS_Alpine < RuleSO/ubuntu.cf
-
-        while [ $CONT_LINE -ne 0 ];do
-        echo ${OS_Ubuntu[${CONT_LINE}]}
-	kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- echo "${OS_Ubuntu[${CONT_LINE}]}" >> teste.txt
-        ((CONT_LINE=CONT_LINE-1))
+    readarray OS < RuleSO/ubuntu.cf
+    i=0
+        while [ $i -le $CONT_LINE ];do
+        echo ${OS[${i}]}
+        kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- echo "${OS[${i}]}" >> teste.txt
+    
+        ((i=i+1))
         done
     esac
     progress-bar2 $CONT2
