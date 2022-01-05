@@ -154,23 +154,56 @@ until [ $CONT -le 0 ]
 do
       echo "Faltam $CONT replicas para configurar firewall."
       VERSION_OS=`kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- grep ^NAME=.*$ /etc/os-release | awk '{print $1}' | sed s/NAME="."//`
-      echo "$VERSION_OS"
-      echo "$VALUE_NAMESPACE"
-      echo "${POD_NAMESPACE[$CONT3]}"
-      progress-bar2 $CONT2
+      echo "$VERSION_OS" #Version the of sistym operation
+      echo "$VALUE_NAMESPACE" #Version the of namespace
+      echo "${POD_NAMESPACE[$CONT3]}" #Version the of PODs, container
 
     case $VERSION_OS in
     #O.S Alpine
     Alpine)
     #test touch in the POD
     kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- touch teste.txt
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apk update 
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apk add iptables
+
+    CONT_LINE=`cat RuleSO/alpine.cf | wc -l`
+    readarray OS_Alpine < RuleSO/alpine.cf
+
+    	while [ $CONT_LINE -ne 0 ];do
+	echo ${OS_Alpine[${CONT_LINE}]}
+	kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- echo "${OS_Alpine[${CONT_LINE}]}" >> teste.txt
+	((CONT_LINE=CONT_LINE-1))
+	done
     ;;
     #O.S Debian
     Debian)
     #test touch in the POD
     kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- touch teste.txt
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apt update && apt install iptables -y
+    CONT_LINE=`cat RuleSO/debian.cf | wc -l`
+    readarray OS_Debian < RuleSO/debian.cf
+
+        while [ $CONT_LINE -ne 0 ];do
+        echo ${OS_Debian[${CONT_LINE}]}
+	kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- echo "${OS_Debian[${CONT_LINE}]}" >> teste.txt
+        ((CONT_LINE=CONT_LINE-1))
+        done
     ;;
+    #O.S Ubuntu
+    Ubuntu)
+    #test touch in the POD
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- touch teste.txt
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apt update && apt install iptables -y
+    CONT_LINE=`cat RuleSO/ubuntu.cf | wc -l`
+    readarray OS_Alpine < RuleSO/ubuntu.cf
+
+        while [ $CONT_LINE -ne 0 ];do
+        echo ${OS_Ubuntu[${CONT_LINE}]}
+	kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- echo "${OS_Ubuntu[${CONT_LINE}]}" >> teste.txt
+        ((CONT_LINE=CONT_LINE-1))
+        done
     esac
+    progress-bar2 $CONT2
     ((CONT=CONT-1))
     ((CONT3=CONT3+1))
 done
