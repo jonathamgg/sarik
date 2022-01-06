@@ -1,5 +1,15 @@
 #SARIK - SEGURANÇA AUTOMÁTICA DE REGRAS EM IPTABLES EM KUBERNETES
 
+   _____              _____    _____   _  __
+  / ____|     /\     |  __ \  |_   _| | |/ /
+ | (___      /  \    | |__) |   | |   | ' / 
+  \___ \    / /\ \   |  _  /    | |   |  <  
+  ____) |  / ____ \  | | \ \   _| |_  | . \ 
+ |_____/  /_/    \_\ |_|  \_\ |_____| |_|\_\
+                                            
+                                            
+
+
 SITE:          https://sarik.org
 
 Autor:         Jonathan G.P. dos Santos
