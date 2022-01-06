@@ -4,21 +4,31 @@
 #
 #  SITE:          https://sarik.org
 #  Autor:         Jonathan G.P. dos Santos
-#  Manutenção:    Jonathan G.P. dos Santos#
+#  Manutenção:    Jonathan G.P. dos Santos
+#
 #
 #--------------------------------------------------------------------------------------#
 #Exemplo:
 #
-#
+#      Access the director AppTest/debian
+#      Execute command:
+#      1 - kubectl create -f namespaces/
+#      2 - kubectl create -f services/
+#      3 - kubectl create -f deployements/
+#      After the command, return for / with command ../..
+#      Execute the script sarik.sh
 #
 #--------------------------------------------------------------------------------------#
 #Histórico
 #
 #  v1.0 03/12/2021, Jonathan G.P. dos Santos
 #      - Beta.
-#  V1.01 02/12/2022, Jonathan G.P. dos Santos
+#  V1.01 02/01/2022, Jonathan G.P. dos Santos
 #      - until, loop for configuration iptables 
 #      - variables
+#  V1.02 04/01/2022, Jonathan G.P. dos Santos
+#      - Add While and code tweaks
+#      - Variables IP, PORT etc
 #--------------------------------------------------------------------------------------#
 #Testado em:
 #  bash 5.0.17
@@ -61,6 +71,9 @@ echo " "
 echo " "
 #---------------------------------VARIÁVEIS--------------------------------------------#
 #
+BRANCO="\033[37;00m"
+VERDE="\033[32;1m"
+VERMELHO="\033[31;1m"
 NODES=`kubectl get node | awk '{print $1}' | grep -v ^NAME` #store nodes
 #for i in "${NODES[@]}";do echo "NODE : $i";done
 
@@ -74,7 +87,14 @@ kubectl get pod -n "$VALUE_NAMESPACE" | awk '{print $1}' | grep -v ^NAME > pod.t
 
 readarray POD_NAMESPACE < pod.txt #armazena a lista de pod em um array
 
+kubectl get pod -n "$VALUE_NAMESPACE" -o wide | awk '{print $6}' | grep -v ^IP | sed 's/0.*.//' > IP_NETWORK.txt
+
+readarray IP_NETWORK < IP_NETWORK.txt
+
+#kubectl get services -n "$VALUE_NAMESPACE" | awk '{print $6}' | grep -v ^IP | sed 's/0.*.//' > IP_NETWORK.txt
+
 CONT=`kubectl get pod -n "$VALUE_NAMESPACE" | awk '{print $1}' | grep -v ^NAME | wc -l`
+
 #for i in "${POD_NAMESPACE[@]}";do echo "$i";done
 
 #Contadores
@@ -84,9 +104,9 @@ CONT3=0 #Cont pod_namespace
 #--------------------------------------------------------------------------------------#
 
 #---------------------------------TESTES-----------------------------------------------#
-#Docker instalado?
+#Docker install?
 [ ! -x "$(which docker)" ] && printf "Precisa instalar o docker, por favor, instale.\n" && exit 1
-#minikube instalado?
+#minikube install?
 [ ! -x "$(which minikube)" ] || [ ! -x "$(which kubectl)" ] && printf "Precisa instalar o minikube ou kubectl, por favor, instale.\n" && exit 1
 #--------------------------------------------------------------------------------------#
 
@@ -158,16 +178,17 @@ printf "\n"
 #---------------------------------EXECUÇÃO---------------------------------------------#
 #
 sleep 5
-until [ $CONT -le 1 ]
+until [ $CONT -le 0 ]
 do
-      CONTLINHAS=$CONT
-      ((CONTLINHAS=CONTLINHAS-1))
-      echo "Faltam $CONTLINHAS replicas para configurar firewall."
+      echo "Faltam $CONT replicas para configurar firewall."
       VERSION_OS=`kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- grep ^NAME=.*$ /etc/os-release | awk '{print $1}' | sed s/NAME="."//`
-      echo "$VERSION_OS" #Version the of sistym operation
-      echo "$VALUE_NAMESPACE" #Version the of namespace
-      echo "${POD_NAMESPACE[$CONT3]}" #Version the of PODs, container
-
+      echo "============================="
+      echo "O sistema operacional do POD é: $(echo -e ${VERMELHO} $VERSION_OS) $(echo -e ${BRANCO})" #Version the of sistym operation
+      sleep 2
+      echo "O namespace da rede é: $(echo -e ${VERMELHO} $VALUE_NAMESPACE) $(echo -e ${BRANCO})" #Version the of namespace
+      sleep 1
+      echo "O nome do POD a ser configurado é: $(echo -e ${VERMELHO} ${POD_NAMESPACE[$CONT3]}) $(echo -e ${BRANCO})" #Version the of PODs, container
+      sleep 2
     case $VERSION_OS in
     #O.S Alpine
     Alpine)
@@ -218,5 +239,23 @@ do
     ((CONT=CONT-1))
     ((CONT3=CONT3+1))
 done
+clear
+echo " "
+echo $(echo -e ${VERDE}) "System configuration done!!" $(echo -e ${BRANCO})
+echo " "
+cat << "EOF"
+   _____              _____    _____   _  __
+  / ____|     /\     |  __ \  |_   _| | |/ /
+ | (___      /  \    | |__) |   | |   | ' /
+  \___ \    / /\ \   |  _  /    | |   |  <
+  ____) |  / ____ \  | | \ \   _| |_  | . \
+ |_____/  /_/    \_\ |_|  \_\ |_____| |_|\_\
+
+EOF
+echo " "
+echo "==================================================================================="
+echo "=========== AUTOMATIC SECURITY OF RULES ON IPTABLES IN KUBERNETES ================="
+echo "===========           By @jonathamgg and @jonathan | DC           ================="
+echo "==================================================================================="
 #
 #--------------------------------------------------------------------------------------#
