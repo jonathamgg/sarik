@@ -210,7 +210,9 @@ do
     Debian)
     #test touch in the POD
     kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- touch teste.txt
-    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apt update && apt install iptables -y
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apt update
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apt install iptables -y
+
     CONT_LINE=`cat RuleSO/debian.cf | wc -l`
     readarray OS < RuleSO/debian.cf
     i=0
@@ -224,7 +226,8 @@ do
     Ubuntu)
     #test touch in the POD
     kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- touch teste.txt
-    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apt update && apt install iptables -y
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apt update 
+    kubectl exec -n $VALUE_NAMESPACE ${POD_NAMESPACE[$CONT3]} -- apt install iptables -y
     CONT_LINE=`cat RuleSO/ubuntu.cf | wc -l`
     readarray OS < RuleSO/ubuntu.cf
     i=0
