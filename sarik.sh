@@ -83,15 +83,21 @@ NODES=`kubectl get node | awk '{print $1}' | grep -v ^NAME` #store nodes
 VALUE_NAMESPACE=`kubectl get namespace | awk '{print $1}' | grep -v ^'default' | grep -v ^NAME | grep -v ^kube` #store name namespace
 #for i in "${LISTNAMES[@]}";do echo "$i";done
 
-kubectl get pod -n "$VALUE_NAMESPACE" | awk '{print $1}' | grep -v ^NAME > pod.txt #recebe a lista de pod e joga para o arquivo
+kubectl get pod -n "$VALUE_NAMESPACE" | awk '{print $1}' | grep -v ^NAME > pod_txt #recebe a lista de pod e joga para o arquivo
 
-readarray POD_NAMESPACE < pod.txt #armazena a lista de pod em um array
+readarray POD_NAMESPACE < pod_txt #armazena a lista de pod em um array
 
-kubectl get pod -n "$VALUE_NAMESPACE" -o wide | awk '{print $6}' | grep -v ^IP | sed 's/0.*.//' > IP_NETWORK.txt
+kubectl get pod -n "$VALUE_NAMESPACE" -o wide | awk '{print $6}' | grep -v ^IP | sed 's/0.*.//' > IP_NETWORK #armazena a lista de IP
 
-readarray IP_NETWORK < IP_NETWORK.txt
+readarray IP_NET < IP_NETWORK
 
-#kubectl get services -n "$VALUE_NAMESPACE" | awk '{print $6}' | grep -v ^IP | sed 's/0.*.//' > IP_NETWORK.txt
+kubectl get services -n "$VALUE_NAMESPACE" | awk '{print $5}' | grep -v ^PORT | cut -d / -f1 > PORT_NAMESPACE #armazena as PORTs
+
+readarray PORT_NS < PORT_NAMESPACE
+
+kubectl get services -n "$VALUE_NAMESPACE" | awk '{print $5}' | grep -v ^PORT | cut -d / -f2 > PROTOCOL_NAMESPACE #armazena os procolos
+
+readarray PROTOCOL_NS < PROTOCOL_NAMESPACE
 
 CONT=`kubectl get pod -n "$VALUE_NAMESPACE" | awk '{print $1}' | grep -v ^NAME | wc -l`
 
