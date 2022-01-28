@@ -11,9 +11,7 @@
 
 ### [Website](https://sarik.org/)  &nbsp; [GUIA](#) &nbsp;  [Doc](http://sarik.org/documentation)  &nbsp; 
 
-![Mozilla Add-on](https://img.shields.io/amo/v/jonathan?color=blue&label=sarik&logo=sarik&logoColor=inactive)
-
-[![npm sarik](https://sarik.org/version)](http://badge.fury.io/js/sails) &nbsp; [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/balderdashy/sails)  &nbsp; [![Twitter Follow](https://img.shields.io/twitter/follow/sailsjs.svg?style=social&maxAge=3600)](https://twitter.com/sailsjs)
+![APM](https://img.shields.io/apm/v/vim-mode?color=blue&label=SARIK&logo=SARIK&logoColor=blue) (http://badge.fury.io/js/sails) &nbsp; [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/balderdashy/sails)  &nbsp; [![Twitter Follow](https://img.shields.io/twitter/follow/sailsjs.svg?style=social&maxAge=3600)](https://twitter.com/sailsjs)
 
 SARIK é um framework back-end que realiza mapeamento do estado que o cluster se encontra. Através dessa análise, consegui configurar automaticamente regras de iptables nos diversos PODs pertencentes ao node (cluster). O framework é uma camada de proteção que busca trazer aos PODs maior segurança no orquestrador de container kubernetes.
 
