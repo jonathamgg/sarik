@@ -54,6 +54,12 @@ $ bash sarik.sh
 
 [Website](https://sarik.org)
 
+[Documentação](https://sarik.org/documentation)
+
+[Guia](https://sarik.org/guia)
+
+[Vídeos](https://sarik.org/video)
+
 ## Autor &nbsp;
 
 Jonathan G.P. dos Santos
