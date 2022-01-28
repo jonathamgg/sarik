@@ -58,6 +58,6 @@ Dr. Vinícius Pereira Gonçalves  - Orientador do projeto
 Dr. Geraldo Pereira Rocha Filho - Co-Orientador do projeto
 
 Luis Eduardo Rodrigues Lima
-[![Jonathan Santos](https://avatars.githubusercontent.com/u/8846965?v=4)] |  [![Vinícius P. Gonçalves](http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4258805P8)](https://orcid.org/0000-0002-3771-2605) |  [![Eric Shaw](https://avatars2.githubusercontent.com/u/7445991?s=144&v=3)](https://github.com/eashaw)
+[![Jonathan Santos](https://avatars.githubusercontent.com/u/8846965?v=4)] |  [![Vinícius P. Gonçalves](http://www.pesquisar.unb.br/img/fotos/0754994451297734.jpg)](https://orcid.org/0000-0002-3771-2605) |  [![Geraldo P. R. Filho](http://www.pesquisar.unb.br/img/fotos/7417585446064168.jpg)](https://orcid.org/0000-0001-6795-2768)
 |:---:|:---:|:---:|
-[Jonathan Santos](http://github.com/jonathamgg) | [Rachael McNeil](https://github.com/rachaelshaw) | [Eric Shaw](https://github.com/eashaw)
+[Jonathan Santos](http://github.com/jonathamgg) | [Vinícius P. Gonçalves](https://orcid.org/0000-0002-3771-2605) | [Geraldo P. R. Filho](https://orcid.org/0000-0001-6795-2768)
