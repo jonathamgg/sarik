@@ -51,7 +51,7 @@ SITE:          https://sarik.org
 
 Autor:         Jonathan G.P. dos Santos
 
-##Agradecimentos:
+## Agradecimentos &nbsp;
 
 Dr. Vinícius Pereira Gonçalves  - Orientador do projeto
 
@@ -59,7 +59,7 @@ Dr. Geraldo Pereira Rocha Filho - Co-Orientador do projeto
 
 Luiz Eduardo Rodrigues Lima
 
-##Equipe
+## Equipe &nbsp;
 
 [![Jonathan Santos](https://avatars.githubusercontent.com/u/8846965?v=4)] |  [![Vinícius P. Gonçalves](https://i1.rgstatic.net/ii/profile.image/616114119778305-1523904461708_Q128/Vinicius-Goncalves-5.jpg)](https://orcid.org/0000-0002-3771-2605) |  [![Geraldo P. R. Filho](http://www.pesquisar.unb.br/img/fotos/7417585446064168.jpg)](https://orcid.org/0000-0001-6795-2768) | [![Luiz Eduardo Rodrigues Lima](https://media-exp1.licdn.com/dms/image/C4E03AQGU8RC9NosMjg/profile-displayphoto-shrink_200_200/0/1613114618401?e=1648684800&v=beta&t=8O__1iTA82-WGzdcmtEaEeEuQw6YGZs8bAWzXdrnMrw)](https://br.linkedin.com/in/luizerl?trk=people-guest_people_search-card)
 |:---:|:---:|:---:|:---:|
