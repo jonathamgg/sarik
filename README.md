@@ -1,4 +1,4 @@
-<pre>[
+[<pre>
    _____              _____    _____   _  __
   / ____|     /\     |  __ \  |_   _| | |/ /
  | (___      /  \    | |__) |   | |   | ' / 
@@ -6,7 +6,7 @@
   ____) |  / ____ \  | | \ \   _| |_  | . \ 
  |_____/  /_/    \_\ |_|  \_\ |_____| |_|\_\
                                             
-](http://sarik.org)</pre>
+</pre>](http://sarik.org)
 
 # [Segurança Automática de Regras em Iptables no Kubernetes](http://sarik.org)
 
