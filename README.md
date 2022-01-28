@@ -19,6 +19,11 @@ A versão 1.0 do SARIK realiza diversas expressões regulares e por meio dessas 
 </p>
 
 ## Instalação &nbsp;
+Após o download do pacote do software, extraia o conteúdo e acesse a pasta
+```sh
+# Acesse a pasta sarik e execute o comando
+$ bash sarik.sh
+```
 
 SITE:          https://sarik.org
 
