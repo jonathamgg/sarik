@@ -21,6 +21,8 @@ A versão 1.0 do SARIK realiza diversas expressões regulares e por meio dessas 
 ## Instalação &nbsp;
 Após o download do pacote do software, extraia o conteúdo e acesse a pasta
 ```sh
+# Caso não tenha um cluster em funcionamento, execute essas próximas etapas para testar o SARIK, caso contrário, vá para execução do script.
+
 # Acesse a pasta AppTest/debian e execute os comandos nessa ordem
 
 $ kubectl create -f namespaces/
@@ -40,6 +42,7 @@ Aguarde os PODs serem carregados, dependendo da conexão, esse processo demora d
 $ ../..
 ```
 
+## Execução do script
 ```sh
 # Execute o script do SARIK
 
