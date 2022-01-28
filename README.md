@@ -58,6 +58,6 @@ Dr. Vinícius Pereira Gonçalves  - Orientador do projeto
 Dr. Geraldo Pereira Rocha Filho - Co-Orientador do projeto
 
 Luis Eduardo Rodrigues Lima
-[![Jonathan Santos](https://avatars.githubusercontent.com/u/8846965?v=4)] |  [![Vinícius P. Gonçalves](http://ft.unb.br/images/fotos/professores/ene-vinicius-pereira-goncalves.jpg)](https://orcid.org/0000-0002-3771-2605) |  [![Geraldo P. R. Filho](http://www.pesquisar.unb.br/img/fotos/7417585446064168.jpg)](https://orcid.org/0000-0001-6795-2768)
+[![Jonathan Santos](https://avatars.githubusercontent.com/u/8846965?v=4)] |  [![Vinícius P. Gonçalves](https://i1.rgstatic.net/ii/profile.image/616114119778305-1523904461708_Q128/Vinicius-Goncalves-5.jpg)](https://orcid.org/0000-0002-3771-2605) |  [![Geraldo P. R. Filho](http://www.pesquisar.unb.br/img/fotos/7417585446064168.jpg)](https://orcid.org/0000-0001-6795-2768)
 |:---:|:---:|:---:|
 [Jonathan Santos](http://github.com/jonathamgg) | [Vinícius P. Gonçalves](https://orcid.org/0000-0002-3771-2605) | [Geraldo P. R. Filho](https://orcid.org/0000-0001-6795-2768)
