@@ -58,6 +58,6 @@ Dr. Vinícius Pereira Gonçalves  - Orientador do projeto
 Dr. Geraldo Pereira Rocha Filho - Co-Orientador do projeto
 
 Luis Eduardo Rodrigues Lima
-[![Jonathan Santos](https://avatars.githubusercontent.com/u/8846965?s=96&v=4] |  [![Rachael McNeil](https://avatars0.githubusercontent.com/u/3065949?v=3&s=144)](http://twitter.com/fancydoilies) |  [![Eric Shaw](https://avatars2.githubusercontent.com/u/7445991?s=144&v=3)](https://github.com/eashaw)
+[![Jonathan Santos](https://avatars.githubusercontent.com/u/8846965?s=48&v=4)] |  [![Rachael McNeil](https://avatars0.githubusercontent.com/u/3065949?v=3&s=144)](http://twitter.com/fancydoilies) |  [![Eric Shaw](https://avatars2.githubusercontent.com/u/7445991?s=144&v=3)](https://github.com/eashaw)
 |:---:|:---:|:---:|
 [Jonathan Santos](http://github.com/jonathamgg) | [Rachael McNeil](https://github.com/rachaelshaw) | [Eric Shaw](https://github.com/eashaw)
