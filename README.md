@@ -21,8 +21,8 @@ A versão 1.0 do SARIK realiza diversas expressões regulares e por meio dessas 
 ## Instalação &nbsp;
 Após o download do pacote do software, extraia o conteúdo e acesse a pasta
 ```sh
-# Caso não tenha um cluster em funcionamento, execute essas próximas etapas para testar o SARIK, caso contrário,
-# vá para execução do script.
+# Caso não tenha um app em funcionamento, execute essas próximas etapas para testar o SARIK.
+# Caso contrário, vá para execução do script.
 
 # Acesse a pasta AppTest/debian e execute os comandos nessa ordem
 
@@ -50,10 +50,13 @@ $ ../..
 $ bash sarik.sh
 ```
 
+## Links &nbsp;
 
-SITE:          https://sarik.org
+[Website](https://sarik.org)
 
-Autor:         Jonathan G.P. dos Santos
+## Autor &nbsp;
+
+Jonathan G.P. dos Santos
 
 ## Agradecimentos &nbsp;
 
