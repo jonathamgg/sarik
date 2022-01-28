@@ -22,6 +22,7 @@ A versão 1.0 do SARIK realiza diversas expressões regulares e por meio dessas 
 Após o download do pacote do software, extraia o conteúdo e acesse a pasta
 ```sh
 # Acesse a pasta AppTest/debian e execute os comandos nessa ordem
+
 $ kubectl create -f namespaces/
 ```
 ```sh
@@ -30,6 +31,21 @@ $ kubectl create -f services/
 ```sh
 $ kubectl create -f deployements/
 ```
+
+Aguarde os PODs serem carregados, dependendo da conexão, esse processo demora de 2 até 5 minutos
+
+```sh
+# Retorne a pasta raiz
+
+$ ../..
+```
+
+```sh
+# Execute o script do SARIK
+
+$ bash sarik.sh
+```
+
 
 SITE:          https://sarik.org
 
