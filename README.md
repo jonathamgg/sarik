@@ -23,9 +23,11 @@ Após o download do pacote do software, extraia o conteúdo e acesse a pasta
 ```sh
 # Acesse a pasta AppTest/debian e execute os comandos nessa ordem
 $ kubectl create -f namespaces/
-
+```
+```sh
 $ kubectl create -f services/
-
+```
+```sh
 $ kubectl create -f deployements/
 ```
 
