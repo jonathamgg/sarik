@@ -53,11 +53,8 @@ $ bash sarik.sh
 ## Links &nbsp;
 
 [Website](https://sarik.org)
-
 [Documentação](https://sarik.org/documentation)
-
 [Guia](https://sarik.org/guia)
-
 [Vídeos](https://sarik.org/video)
 
 ## Autor &nbsp;
