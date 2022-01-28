@@ -1,4 +1,4 @@
-[<pre>
+<pre>
    _____              _____    _____   _  __
   / ____|     /\     |  __ \  |_   _| | |/ /
  | (___      /  \    | |__) |   | |   | ' / 
@@ -6,7 +6,7 @@
   ____) |  / ____ \  | | \ \   _| |_  | . \ 
  |_____/  /_/    \_\ |_|  \_\ |_____| |_|\_\
                                             
-</pre>]
+</pre>
 
 # SARIK - SEGURANÇA AUTOMÁTICA DE REGRAS EM IPTABLES EM KUBERNETES (http://sarik.org)
 
