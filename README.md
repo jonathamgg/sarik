@@ -40,7 +40,7 @@ Aguarde os PODs serem carregados, dependendo da conexão, esse processo demora d
 ```sh
 # Retorne a pasta raiz
 
-$ ../..
+$ cd ..
 ```
 
 ## Execução do script
