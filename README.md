@@ -53,6 +53,7 @@ $ bash sarik.sh
 ## Links &nbsp;
 
 - [Website](https://sarik.org)
+- [Download](https://sarik.org/download)
 - [Documentação](https://sarik.org/documentation)
 - [Guia](https://sarik.org/guia)
 - [Vídeos](https://sarik.org/videos)
