@@ -54,8 +54,7 @@ $ bash sarik.sh
 
 - [Website](https://sarik.org)
 - [Download](https://sarik.org/download)
-- [Documentação](https://sarik.org/documentation)
-- [Guia](https://sarik.org/guia)
+- [Manual](https://sarik.org/manual)
 - [Vídeos](https://sarik.org/videos)
 
 ## Autor &nbsp;
