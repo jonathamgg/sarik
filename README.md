@@ -9,7 +9,7 @@
 </pre>
 # [Segurança Automática de Regras em Iptables no Kubernetes](http://sarik.org)
 
-### [Website](https://sarik.org/)  &nbsp; [Guia](http://sarik.org/guia) &nbsp;  [Documentação](http://sarik.org/documentation)  &nbsp; [Vídeos](http://sarik.org/videos) &nbsp;
+### [Website](https://sarik.org/)  &nbsp; [Manual](http://sarik.org/manual) &nbsp;  [Vídeos](http://sarik.org/videos) &nbsp;
 
 [![APM](https://img.shields.io/apm/v/vim-mode?color=blue&label=SARIK&logo=SARIK&logoColor=blue)](https://sarik.org/) &nbsp; 
 <p align="justify">
