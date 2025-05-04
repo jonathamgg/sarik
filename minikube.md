@@ -41,9 +41,11 @@ sudo service docker start
 
 # Repositório Kubernetes
 
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
 
 # Instalação
 
@@ -62,7 +64,7 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 # Iniciar cluster
 
-minikube start --driver=docker --memory=4096 --cpus=2 --cni=calico
+minikube start --driver=docker --memory=4096 --cpus=2 --network-plugin=cni --cni=calico
 
 # Verificar status
 
