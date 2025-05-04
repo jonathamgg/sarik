@@ -47,6 +47,8 @@ $ cd ../..
 ```sh
 # Execute o script do SARIK
 
+$ sudo chmod +x -R * 
+
 $ bash sarik.sh
 ```
 
