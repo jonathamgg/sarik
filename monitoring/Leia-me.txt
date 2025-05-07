@@ -1,0 +1,25 @@
+No diretório atual, você encontrará uma pasta que contém os seguintes PODs 
+para monitorar o desempenho do sistema:
+
+Grafana: É um POD responsável por fornecer uma plataforma de visualização 
+e monitoramento de métricas. Ele permite a criação de painéis personalizados 
+para exibir dados em tempo real, incluindo informações sobre memória e uso 
+da CPU dos demais PODs.
+
+Prometheus: Esse POD desempenha um papel crucial na coleta e armazenamento de métricas. 
+Ele é responsável por coletar e registrar informações relacionadas à memória 
+e CPU de todos os PODs em execução no ambiente.
+
+Metrics: Esse POD é responsável por coletar informações detalhadas sobre a utilização 
+de memória e CPU de cada um dos outros PODs. Ele disponibiliza esses dados para o Prometheus, 
+que por sua vez armazena essas informações para análise e visualização posterior.
+
+Além disso, para facilitar a visualização e análise dos dados coletados, é fornecido 
+um dashboard personalizado para o Grafana. Esse dashboard permite a visualização gráfica 
+das métricas de memória e CPU dos PODs monitorados. Com ele, é possível acompanhar o 
+desempenho do sistema em tempo real e identificar possíveis gargalos ou problemas de recursos.
+
+Esses componentes são essenciais para a monitoração e análise contínua do sistema, 
+proporcionando insights valiosos sobre o consumo de memória e CPU dos PODs. 
+Através dessas informações, é possível tomar medidas proativas para otimizar o desempenho, 
+a escalabilidade e a eficiência do ambiente Kubernetes.
